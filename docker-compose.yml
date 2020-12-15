@@ -1,0 +1,21 @@
+web:
+  image: node
+  command: npm start
+  links:
+    - db
+  working_dir: /src
+  environment:
+    SEQ_DB: clemensdbilesson4db
+    SEQ_USER: wjclemens69
+    SEQ_PW: SusanitiEmily08!
+    PORT: 5432
+    DATABASE_URL: postgres://username:pgpassword@db:5432/clemensdbilesson4db
+  volumes:
+    - ./:/src
+db:
+  image: postgres
+  ports:
+  - "5432:5432"
+  environment:
+    POSTGRES_USER: wjclemens69
+    POSTGRES_PASSWORD: SusanitiEmily08!
